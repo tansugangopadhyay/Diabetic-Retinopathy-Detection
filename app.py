@@ -231,4 +231,6 @@ if __name__ == '__main__':
         print(f"Please ensure the model file exists at: {MODEL_PATH}")
         print("Download from: https://www.kaggle.com/souravs17031999/blindness-detection-pretrained-weights-pytorch")
     
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    # Get port from environment variable (for Render deployment) or use 5000 as default
+    port = int(os.environ.get('PORT', 5000))
+    app.run(debug=False, host='0.0.0.0', port=port)
